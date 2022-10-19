@@ -20,7 +20,7 @@ public class DiagonalAnimation {
         frame.add(panel);
         frame.pack();
 
-        DiagonalAnimator animator = new DiagonalAnimator(getImage(), panel, frame.getToolkit(), 0.1);
+        DiagonalAnimator animator = new DiagonalAnimator(getImage(), panel, frame.getToolkit(), 0.01);
         animator.run();
 
         frame.setVisible(true);

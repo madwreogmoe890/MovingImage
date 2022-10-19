@@ -49,9 +49,9 @@ public class DiagonalAnimator {
     }
 
     private void animation() {
-        int pixels = (int) Math.round((System.currentTimeMillis() - startTime) * speed);
         int diagonalLength = Math.min(panel.getWidth(), panel.getHeight());
-        pixels %= diagonalLength;
+        double progress = Math.round((System.currentTimeMillis() - startTime) * speed) % 100;
+        int pixels = (int) Math.round(diagonalLength * progress / 100);
         label.setLocation(pixels, pixels);
         labelClone.setLocation(pixels - diagonalLength, pixels - diagonalLength);
         toolkit.sync();
