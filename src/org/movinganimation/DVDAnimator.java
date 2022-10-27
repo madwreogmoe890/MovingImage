@@ -14,7 +14,6 @@ public class DVDAnimator {
     private JLabel label;
     private final Toolkit toolkit;
     private final Progress timer;
-    private final Color[] colors = {Color.RED, Color.BLUE, Color.GREEN, Color.CYAN, Color.ORANGE, Color.YELLOW};
     private Color currentColor;
     private double positionX;
     private double positionY;
@@ -106,8 +105,7 @@ public class DVDAnimator {
     private Color getRandomColor() {
         Color color;
         do {
-            int key = (int) (Math.random() * colors.length);
-            color = colors[key];
+            color = Color.getHSBColor((float) Math.random(), 1, 1);
         } while (color.equals(currentColor));
         return color;
     }
